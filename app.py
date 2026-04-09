@@ -189,7 +189,9 @@ else:
             
         # Draft Email Viewer
         st.markdown("#### Email Draft")
-        st.text_area("Review the AI drafted response:", value=plan.draft_reply, height=300, disabled=True)
+        st.markdown("Review the AI drafted response:")
+        with st.container(border=True, height=300):
+            st.markdown(plan.draft_reply)
         
         # Execution Controls
         if not exec_result:
